@@ -10,7 +10,9 @@ def parallel_processing(_n, _m, data):
     for i in range(_m):
         output.append(thread_list[0])
         thread_list[0]=(thread_list[0][0], thread_list[0][1]+data[i])
-        thread_list.sort(key=lambda a: a[1])
+        thread_list=sorted(thread_list, key=lambda a: (a[1], a[0]))
+
+
 
     return output
 
